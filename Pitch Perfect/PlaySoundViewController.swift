@@ -15,11 +15,9 @@ class PlaySoundViewController: UIViewController {
    
     
     func read_movie_quote_file_path() -> String!{
-        let manager = NSFileManager.defaultManager()
-        
       let file_path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
-        println(file_path)
-        return file_path
+      println(file_path)
+      return file_path
     }
     
     
@@ -46,18 +44,26 @@ class PlaySoundViewController: UIViewController {
     }
     */
 
-    @IBAction func slow_button_pressed(sender: UIButton) {
-        self.play_movie_quote()
-        
-    }
+  @IBAction func slow_button_pressed(sender: UIButton) {
+      self.play_movie_quote()
+  }
     
+  @IBAction func fast_button_pressed(sender: UIButton) {
+  }
     
-    func play_movie_quote() {
-      self.audio_player = self.init_audio_player_with_path(self.read_movie_quote_file_path())
-
-      self.audio_player?.play()
-    }
+  func play_movie_quote() {
+    self.audio_player?.play()
+    self.audio_player = self.init_audio_player_with_path(self.read_movie_quote_file_path())
+    self.set_playback_rate(0.5)
+    self.audio_player?.play()
+  }
   
+  func set_playback_rate(rate:Float) {
+    assert(rate >= 0.5, "rate must be between 0.5 and 2.0")
+    assert(rate <= 2.0, "rate must be between 0.5 and 2.0")
+    self.audio_player?.enableRate = true
+    self.audio_player?.rate=rate
+  }
   
   func init_audio_player_with_path(path: String!) -> AVAudioPlayer?{
     let movie_quote_url = NSURL(fileURLWithPath: path)
