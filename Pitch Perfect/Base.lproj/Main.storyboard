@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fvh-im-kcm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Recording-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,36 +19,106 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGp-Iz-iTd">
                                 <rect key="frame" x="250" y="250" width="100" height="100"/>
-                                <state key="normal" image="Image">
+                                <state key="normal" image="Microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="start_recording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AKx-EI-t7Q"/>
+                                    <action selector="start_recording_pressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vGe-ia-c8u"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gox-Dl-pgt">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gox-Dl-pgt">
                                 <rect key="frame" x="264" y="369" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-NA-4me">
+                                <rect key="frame" x="275" y="521" width="50" height="50"/>
+                                <state key="normal" image="Stop button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop_button_pressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sk2-pd-3xu"/>
+                                    <segue destination="yKV-xP-Dck" kind="show" id="a4g-hi-is2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="gox-Dl-pgt" secondAttribute="centerX" id="1jw-RC-boN"/>
+                            <constraint firstAttribute="centerX" secondItem="EKR-NA-4me" secondAttribute="centerX" id="9BQ-dC-nsz"/>
                             <constraint firstAttribute="centerY" secondItem="SGp-Iz-iTd" secondAttribute="centerY" id="CKF-dw-73s"/>
                             <constraint firstAttribute="centerX" secondItem="SGp-Iz-iTd" secondAttribute="centerX" constant="-0.5" id="SFP-1a-Ols"/>
+                            <constraint firstItem="EKR-NA-4me" firstAttribute="top" secondItem="gox-Dl-pgt" secondAttribute="bottom" constant="131" id="Zdv-Iw-qsY"/>
+                            <constraint firstItem="gox-Dl-pgt" firstAttribute="top" secondItem="SGp-Iz-iTd" secondAttribute="bottom" constant="19" id="aA8-dR-i3q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recording" id="dbJ-KZ-OOG"/>
                     <connections>
+                        <outlet property="recording_button" destination="SGp-Iz-iTd" id="A9g-1c-44A"/>
                         <outlet property="recording_label" destination="gox-Dl-pgt" id="pAx-98-o1S"/>
+                        <outlet property="stop_button" destination="EKR-NA-4me" id="IjQ-Uw-vVI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1025" y="431"/>
+        </scene>
+        <!--Play Sound View Controller-->
+        <scene sceneID="rV7-Ao-lpk">
+            <objects>
+                <viewController id="yKV-xP-Dck" customClass="PlaySoundViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y9d-nF-GzL"/>
+                        <viewControllerLayoutGuide type="bottom" id="FfB-aV-OsQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wzP-Cy-ltv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3x-V0-MyP">
+                                <rect key="frame" x="40" y="104" width="100" height="100"/>
+                                <state key="normal" image="Slow Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="slow_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="wej-7s-J5B"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S3x-V0-MyP" firstAttribute="top" secondItem="Y9d-nF-GzL" secondAttribute="bottom" constant="50" id="Ivs-ix-TTf"/>
+                            <constraint firstItem="S3x-V0-MyP" firstAttribute="leading" secondItem="wzP-Cy-ltv" secondAttribute="leadingMargin" constant="30" id="rrJ-65-UHq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10l-Ee-0vM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="40g-qS-05r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvh-im-kcm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQN-fP-qdi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="aui-CO-W45"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRT-sj-Vqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="431"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="100" height="100"/>
+        <image name="Microphone" width="100" height="100"/>
+        <image name="Slow Button" width="100" height="100"/>
+        <image name="Stop button" width="50" height="50"/>
     </resources>
 </document>
