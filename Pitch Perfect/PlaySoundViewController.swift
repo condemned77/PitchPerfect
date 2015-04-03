@@ -11,8 +11,9 @@ import AVFoundation
 
 class PlaySoundViewController: UIViewController {
 
-    var audio_player: AVAudioPlayer? = nil
-   
+  var audio_player: AVAudioPlayer? = nil
+  var recorded_audio: RecordedAudio!
+  
   @IBOutlet weak var stop_button: UIButton!
     
     func read_movie_quote_file_path() -> String!{
@@ -48,12 +49,14 @@ class PlaySoundViewController: UIViewController {
 
   @IBAction func slow_button_pressed(sender: UIButton) {
     self.play_movie_quote_slow()
+    self.play_recorded_audio_slow()
     self.stop_button.hidden = false
   }
     
   @IBAction func fast_button_pressed(sender: UIButton) {
-      self.play_movie_quote_fast()
-      self.stop_button.hidden = false
+//      self.play_movie_quote_fast()
+    self.play_recorded_audio_fast()
+    self.stop_button.hidden = false
   }
   
   @IBAction func stop_button_pressed(sender: UIButton) {
@@ -66,10 +69,20 @@ class PlaySoundViewController: UIViewController {
     self.audio_player = self.init_audio_player_with_path(file_path)
     self.play_sound_with_rate(2.0)
   }
+  
+  func play_recorded_audio_fast(){
+    self.audio_player = self.init_audio_player_with_recorded_audio_wav(self.recorded_audio)
+    self.play_sound_with_rate(2.0)
+  }
     
   func play_movie_quote_slow() {
     let file_path = self.read_movie_quote_file_path()
     self.audio_player = self.init_audio_player_with_path(file_path)
+    self.play_sound_with_rate(0.5)
+  }
+  
+  func play_recorded_audio_slow() {
+    self.audio_player = self.init_audio_player_with_recorded_audio_wav(self.recorded_audio)
     self.play_sound_with_rate(0.5)
   }
   
@@ -90,5 +103,10 @@ class PlaySoundViewController: UIViewController {
     let movie_quote_url = NSURL(fileURLWithPath: path)
     var error: NSError?
     return AVAudioPlayer(contentsOfURL: movie_quote_url, fileTypeHint: "mp3", error: &error)
+  }
+  
+  func init_audio_player_with_recorded_audio_wav(recorded_audio: RecordedAudio!) -> AVAudioPlayer?{
+    var error: NSError?
+    return    AVAudioPlayer(contentsOfURL: recorded_audio.filePathURL, fileTypeHint: "wav", error: &error)
   }
 }

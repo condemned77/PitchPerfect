@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+
+
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 
   @IBOutlet weak var recording_label: UILabel!
@@ -38,9 +40,18 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     if flag {
       //do something
       println("recording successfully finished")
+      let recorded_audio = RecordedAudio(title:recorder.url.lastPathComponent, filePathURL:recorder.url)
+      self.performSegueWithIdentifier("stopRecordingSegue", sender: recorded_audio)
     }
     else{
       println("recording successfully finished")
+    }
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "stopRecordingSegue" {
+      let playSoundsVC = segue.destinationViewController as PlaySoundViewController
+      playSoundsVC.recorded_audio = sender as RecordedAudio
     }
   }
   

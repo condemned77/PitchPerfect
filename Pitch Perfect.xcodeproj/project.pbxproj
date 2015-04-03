@@ -16,6 +16,7 @@
 		38C6CFB61ABEDFEC00117EAA /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C6CFB51ABEDFEC00117EAA /* PlaySoundViewController.swift */; };
 		38C6CFB81ABF073100117EAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6CFB71ABF073000117EAA /* AVFoundation.framework */; };
 		38C6CFBA1ABF07A000117EAA /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38C6CFB91ABF07A000117EAA /* movie_quote.mp3 */; };
+		38DA2BFC1ACED02100B795C6 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA2BFB1ACED02100B795C6 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		38C6CFB51ABEDFEC00117EAA /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		38C6CFB71ABF073000117EAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		38C6CFB91ABF07A000117EAA /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		38DA2BFB1ACED02100B795C6 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				38A3E7221AB5FB5700DD375E /* AppDelegate.swift */,
 				38A3E7241AB5FB5700DD375E /* RecordSoundViewController.swift */,
+				38DA2BFB1ACED02100B795C6 /* RecordedAudio.swift */,
 				38A3E7261AB5FB5700DD375E /* Main.storyboard */,
 				38A3E7291AB5FB5700DD375E /* Images.xcassets */,
 				38A3E72B1AB5FB5700DD375E /* LaunchScreen.xib */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DA2BFC1ACED02100B795C6 /* RecordedAudio.swift in Sources */,
 				38A3E7251AB5FB5700DD375E /* RecordSoundViewController.swift in Sources */,
 				38C6CFB61ABEDFEC00117EAA /* PlaySoundViewController.swift in Sources */,
 				38A3E7231AB5FB5700DD375E /* AppDelegate.swift in Sources */,
