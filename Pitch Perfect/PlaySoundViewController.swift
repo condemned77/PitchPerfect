@@ -80,7 +80,7 @@ class PlaySoundViewController: UIViewController {
     
     @IBAction func darth_vader_button_pressed(sender: AnyObject) {
         self.reset_audio_engine_and_player()
-        self.play_recorded_audio_with_pitch(-500.0)
+        self.play_recorded_audio_with_pitch(-1000.0)
         self.stop_button.hidden = false
     }
     

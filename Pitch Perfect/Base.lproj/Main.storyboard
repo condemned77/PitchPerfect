@@ -130,7 +130,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="H3z-1E-YY0" secondAttribute="trailing" constant="15" id="ILx-Fz-4yu"/>
                             <constraint firstItem="S3x-V0-MyP" firstAttribute="top" secondItem="Y9d-nF-GzL" secondAttribute="bottom" constant="50" id="Ivs-ix-TTf"/>
                             <constraint firstItem="FfB-aV-OsQ" firstAttribute="top" secondItem="H3z-1E-YY0" secondAttribute="bottom" constant="157" id="Nx0-c9-m3t"/>
-                            <constraint firstItem="H3z-1E-YY0" firstAttribute="top" secondItem="1TG-ec-kJF" secondAttribute="bottom" constant="129" id="V40-h0-NUG"/>
                             <constraint firstAttribute="centerX" secondItem="PUN-Bi-twY" secondAttribute="centerX" id="Xfb-K6-P8I"/>
                             <constraint firstItem="Yrf-g7-7Wg" firstAttribute="leading" secondItem="wzP-Cy-ltv" secondAttribute="leadingMargin" constant="15" id="cI6-N3-5f2"/>
                             <constraint firstItem="S3x-V0-MyP" firstAttribute="leading" secondItem="wzP-Cy-ltv" secondAttribute="leadingMargin" constant="15" id="rrJ-65-UHq"/>
