@@ -76,15 +76,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3x-V0-MyP">
-                                <rect key="frame" x="31" y="114" width="100" height="100"/>
-                                <state key="normal" image="Slow Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="slow_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="wej-7s-J5B"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-ec-kJF">
                                 <rect key="frame" x="469" y="114" width="100" height="100"/>
                                 <state key="normal" image="Fast Button">
@@ -103,13 +94,45 @@
                                     <action selector="stop_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="M17-fz-xTK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-g7-7Wg">
+                                <rect key="frame" x="31" y="343" width="100" height="100"/>
+                                <state key="normal" image="Chipmunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chipmunk_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="wyg-Bi-bRH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3x-V0-MyP">
+                                <rect key="frame" x="31" y="114" width="100" height="100"/>
+                                <state key="normal" image="Slow Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="slow_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="wej-7s-J5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3z-1E-YY0">
+                                <rect key="frame" x="469" y="343" width="100" height="100"/>
+                                <state key="normal" image="Darth Vader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="darth_vader_button_pressed:" destination="yKV-xP-Dck" eventType="touchUpInside" id="uoU-hj-WAT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FfB-aV-OsQ" firstAttribute="top" secondItem="PUN-Bi-twY" secondAttribute="bottom" constant="46" id="2x5-HQ-Zyf"/>
                             <constraint firstItem="1TG-ec-kJF" firstAttribute="top" secondItem="Y9d-nF-GzL" secondAttribute="bottom" constant="50" id="3m1-Rp-46S"/>
-                            <constraint firstItem="PUN-Bi-twY" firstAttribute="top" secondItem="1TG-ec-kJF" secondAttribute="bottom" constant="290" id="8Vf-Qv-TgL"/>
+                            <constraint firstItem="FfB-aV-OsQ" firstAttribute="top" secondItem="Yrf-g7-7Wg" secondAttribute="bottom" constant="157" id="BlX-Uq-RYy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H3z-1E-YY0" secondAttribute="trailing" constant="15" id="ILx-Fz-4yu"/>
                             <constraint firstItem="S3x-V0-MyP" firstAttribute="top" secondItem="Y9d-nF-GzL" secondAttribute="bottom" constant="50" id="Ivs-ix-TTf"/>
+                            <constraint firstItem="FfB-aV-OsQ" firstAttribute="top" secondItem="H3z-1E-YY0" secondAttribute="bottom" constant="157" id="Nx0-c9-m3t"/>
+                            <constraint firstItem="H3z-1E-YY0" firstAttribute="top" secondItem="1TG-ec-kJF" secondAttribute="bottom" constant="129" id="V40-h0-NUG"/>
                             <constraint firstAttribute="centerX" secondItem="PUN-Bi-twY" secondAttribute="centerX" id="Xfb-K6-P8I"/>
+                            <constraint firstItem="Yrf-g7-7Wg" firstAttribute="leading" secondItem="wzP-Cy-ltv" secondAttribute="leadingMargin" constant="15" id="cI6-N3-5f2"/>
                             <constraint firstItem="S3x-V0-MyP" firstAttribute="leading" secondItem="wzP-Cy-ltv" secondAttribute="leadingMargin" constant="15" id="rrJ-65-UHq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1TG-ec-kJF" secondAttribute="trailing" constant="15" id="wdV-Mz-aOV"/>
                         </constraints>
@@ -142,6 +165,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chipmunk" width="100" height="100"/>
+        <image name="Darth Vader" width="100" height="100"/>
         <image name="Fast Button" width="100" height="100"/>
         <image name="Microphone" width="100" height="100"/>
         <image name="Slow Button" width="100" height="100"/>
