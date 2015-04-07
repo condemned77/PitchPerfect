@@ -26,8 +26,9 @@ class RecordedAudio: NSObject {
     Excerpt From: Apple Inc. “The Swift Programming Language.” iBooks. https://itun.es/de/jEUH0.l
     
     
-    I choose this initializer version because, from my point of view,
-    an instance of this model should not exist without these properties.
+    I choose this initializer version instead of the version described in the class
+    because, from my point of view, an instance of this model should not exist 
+    without these properties.
     Therefore, I want to "force" a user of this class to pass the relevant
     arguments directly.
     */
