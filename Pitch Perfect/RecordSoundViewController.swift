@@ -21,12 +21,13 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   var audioRecorder:AVAudioRecorder!
   
   
-  override func viewDidLoad() {
-      super.viewDidLoad()
-      // Do any additional setup after loading the view, typically from a nib.
-      self.stop_button.hidden = true
-  }
-  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.stop_button.hidden = true
+        self.recording_label.text = "Tap to Record"
+    }
+
   override func viewWillAppear(animated: Bool) {
       self.recording_button.enabled = true
   }
@@ -59,7 +60,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   }
   
   func configure_UIButtons_when_start_recording_button_is_pressed(){
-    self.recording_label.hidden   = !self.recording_label.hidden
     self.stop_button.hidden       = false
     self.recording_button.enabled = false
   }
@@ -86,45 +86,45 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
   }
   
-  func start_recording() {
-    
-    let filePath = default_file_path_for_audio_recording()
-    println(filePath)
-    
-    self.configure_AVAudioRecorder_session()
-    audioRecorder = self.create_audio_recorder_and_initialise(filePath: filePath)
-    audioRecorder.record()
-  }
-  
-  
-  func create_audio_recorder_and_initialise(filePath file_path:NSURL) -> AVAudioRecorder{
-    let audioRecorder = AVAudioRecorder(URL: file_path, settings: nil, error: nil)
-    audioRecorder.meteringEnabled = true
-    audioRecorder.prepareToRecord()
-    audioRecorder.delegate = self
-    return audioRecorder
-  }
-  
-  func configure_UIButtons_when_stop_recording_button_is_pressed(){
-    self.recording_label.hidden = true
-    self.recording_button.enabled = true
-    self.stop_button.hidden = true
-  }
-  
-  func stop_recording() {
-    audioRecorder.stop()
-    var audioSession = AVAudioSession.sharedInstance()
-    audioSession.setActive(false, error: nil)
-  }
+    func start_recording() {
+        let filePath = default_file_path_for_audio_recording()
+        println(filePath)
 
-  @IBAction func start_recording_pressed(sender: UIButton) {
-    self.configure_UIButtons_when_start_recording_button_is_pressed()
-    self.start_recording()
-  }
+        self.configure_AVAudioRecorder_session()
+        audioRecorder = self.create_audio_recorder_and_initialise(filePath: filePath)
+        audioRecorder.record()
+    }
 
-  @IBAction func stop_button_pressed(sender: UIButton) {
-    self.configure_UIButtons_when_stop_recording_button_is_pressed()
-    self.stop_recording()
-  }
+  
+    func create_audio_recorder_and_initialise(filePath file_path:NSURL) -> AVAudioRecorder{
+        let audioRecorder = AVAudioRecorder(URL: file_path, settings: nil, error: nil)
+        audioRecorder.meteringEnabled = true
+        audioRecorder.prepareToRecord()
+        audioRecorder.delegate = self
+        return audioRecorder
+    }
+
+    func configure_UIButtons_when_stop_recording_button_is_pressed(){
+        self.recording_button.enabled = true
+        self.stop_button.hidden = true
+    }
+
+    func stop_recording() {
+        audioRecorder.stop()
+        var audioSession = AVAudioSession.sharedInstance()
+        audioSession.setActive(false, error: nil)
+    }
+
+    @IBAction func start_recording_pressed(sender: UIButton) {
+        self.configure_UIButtons_when_start_recording_button_is_pressed()
+        self.recording_label.text = "recording"
+        self.start_recording()
+    }
+
+    @IBAction func stop_button_pressed(sender: UIButton) {
+        self.recording_label.text = "Tap to Record"
+        self.configure_UIButtons_when_stop_recording_button_is_pressed()
+        self.stop_recording()
+    }
 }
 
