@@ -42,11 +42,13 @@ class PlaySoundViewController: UIViewController {
     */
 
     @IBAction func slow_button_pressed(sender: UIButton) {
+        self.reset_audio_engine_and_player()
         self.play_recorded_audio_slow()
         self.stop_button.hidden = false
     }
 
     @IBAction func fast_button_pressed(sender: UIButton) {
+        self.reset_audio_engine_and_player()
         self.play_recorded_audio_fast()
         self.stop_button.hidden = false
     }
