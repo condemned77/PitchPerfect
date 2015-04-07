@@ -15,7 +15,6 @@
 		38A3E7391AB5FB5700DD375E /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3E7381AB5FB5700DD375E /* Pitch_PerfectTests.swift */; };
 		38C6CFB61ABEDFEC00117EAA /* PlaySoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C6CFB51ABEDFEC00117EAA /* PlaySoundViewController.swift */; };
 		38C6CFB81ABF073100117EAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C6CFB71ABF073000117EAA /* AVFoundation.framework */; };
-		38C6CFBA1ABF07A000117EAA /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38C6CFB91ABF07A000117EAA /* movie_quote.mp3 */; };
 		38DA2BFC1ACED02100B795C6 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DA2BFB1ACED02100B795C6 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		38A3E7381AB5FB5700DD375E /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 		38C6CFB51ABEDFEC00117EAA /* PlaySoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundViewController.swift; sourceTree = "<group>"; };
 		38C6CFB71ABF073000117EAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		38C6CFB91ABF07A000117EAA /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 		38DA2BFB1ACED02100B795C6 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 		38A3E7201AB5FB5700DD375E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				38C6CFB91ABF07A000117EAA /* movie_quote.mp3 */,
 				38A3E7211AB5FB5700DD375E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -206,7 +203,6 @@
 			files = (
 				38A3E7281AB5FB5700DD375E /* Main.storyboard in Resources */,
 				38A3E72D1AB5FB5700DD375E /* LaunchScreen.xib in Resources */,
-				38C6CFBA1ABF07A000117EAA /* movie_quote.mp3 in Resources */,
 				38A3E72A1AB5FB5700DD375E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
