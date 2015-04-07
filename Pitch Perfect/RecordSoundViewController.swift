@@ -38,10 +38,13 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
   
   func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
     if flag {
-      //do something
-      println("recording successfully finished")
-      let recorded_audio = RecordedAudio(title:recorder.url.lastPathComponent, filePathURL:recorder.url)
-      self.performSegueWithIdentifier("stopRecordingSegue", sender: recorded_audio)
+        //do something
+        println("recording successfully finished")
+
+        /*concerning the review, I do call the initializer here, don't I?
+        It looks like I don't understand the review.*/
+        let recorded_audio = RecordedAudio(title:recorder.url.lastPathComponent, filePathURL:recorder.url)
+        self.performSegueWithIdentifier("stopRecordingSegue", sender: recorded_audio)
     }
     else{
       println("recording successfully finished")
